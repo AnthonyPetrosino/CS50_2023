@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+            <script>
+                function checkMCAnswer(button) {
+                var answer = button.getAttribute('multChoiceAnswer');
+                var correctness = document.getElementById('correctness');
+
+                if (answer == 'correct')
+                {
+                    button.style.backgroundColor = 'green';
+                    correctness.innerHTML = 'Correct!';
+                    correctness.style.color = 'green';
+                }
+                else
+                {
+                    button.style.backgroundColor = 'red';
+                    correctness.innerHTML = 'Incorrect';
+                    correctness.style.color = 'red';
+                }
+            }
+
+            function checkORAnswer(button) {
+                let input = document.querySelector('input').value;
+                var correctness2 = document.getElementById('correctness2');
+
+                if (input == 'Switzerland')
+                {
+                    button.style.backgroundColor = 'green';
+                    correctness2.innerHTML = 'Correct!';
+                    correctness2.style.color = 'green';
+                }
+                else
+                {
+                    button.style.backgroundColor = 'red';
+                    correctness2.innerHTML = 'Incorrect';
+                    correctness2.style.color = 'red';
+                }
+            }
+
+        </script>
+
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!--Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                <button multChoiceAnswer="correct" onclick="checkMCAnswer(this)">5 sheep per person</button>
+                <button multChoiceAnswer="incorrect" onclick="checkMCAnswer(this)">1 sheep per 3 people</button>
+                <button multChoiceAnswer="incorrect" onclick="checkMCAnswer(this)">1 sheep per person</button>
+                <button multChoiceAnswer="incorrect" onclick="checkMCAnswer(this)">9 sheep per person</button>
+                <div id="correctness"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <input placeholder="Answer" type="text">
+                <button id="check" openResponseAnswer="" onclick="checkORAnswer(this)" class="input">Submit</button>
+                <div id="correctness2"></div>
+
+            </div>
+        </div>
+    </body>
+</html>

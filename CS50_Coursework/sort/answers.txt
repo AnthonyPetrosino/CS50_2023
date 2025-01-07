@@ -1,0 +1,35 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+When comparing sizes of 10000:
+Sorted = 0m0.122s
+Random = 0m0.314s
+Reversed = 0m0.329s
+
+When compared to sort2 and sort3, sort1 has a slow runtime when sorting random and reversed lists
+but a faster runtime when sorting a sorted list. Since Bubble Sort has a O(n^2) and a Ω(n), we can
+guess that sort1 uses Bubble Sort.
+
+
+sort2 uses: Merge Sort
+
+How do you know?:
+When comparing sizes of 10000:
+Sorted = 0m0.093s
+Random = 0m0.131s
+Reversed = 0m0.079s
+
+When compared to sort1 and sort3, sort2 has a fast runtime when sorting sorted, random and reversed lists.
+Since Merge Sort has a O(n log n) and a Ω(n log n), we can guess that sort2 uses Merge Sort.
+
+
+sort3 uses: Selection Sort
+
+How do you know?:
+When comparing sizes of 10000:
+Sorted = 0m0.201s
+Random = 0m0.182s
+Reversed = 0m0.183s
+
+When compared to sort1 and sort2, sort3 has a slow runtime when sorting sorted, random and reversed lists.
+Since Selection Sort has a O(n^2) and a Ω(n^2), we can guess that sort3 uses Selection Sort.

@@ -1,0 +1,114 @@
+/*
+5 CSS selectors with 5 different CSS properties
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.img-hc {
+  width: 50px;
+  position: center;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: black;
+    margin-bottom: 70px;
+  }
+
+p {
+  font-size: 18px;
+}
+
+li {
+  font-size: 18px;
+}
+
+  section {
+    padding: 20px;
+    margin-top: 60px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul {
+    margin-left: 60px;
+  }
+
+  ul li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    line-height: 100px;
+    background-color: white;
+  }
+
+  ul li a:hover {
+    color: red;
+  }
+
+  ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    padding: 0 30px;
+  }
+
+  .btn {
+    padding:12px 28px;
+    font-weight: 700;
+  }
+
+  .btn-brand {
+    background-color: red;
+    border-color: black;
+  }
+
+  .btn-brand:hover {
+    background-color: red;
+  }
+
+@media screen and (max-width: 600px)
+{
+  ul li a {
+    font-size: 10px;
+  }
+
+  ul li {
+    line-height: 40px;
+    background-color: white;
+  }
+
+  ul {
+    margin-left: 5px;
+  }
+
+  nav {
+    height: 30px;
+    display: flex;
+    align-items: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+}

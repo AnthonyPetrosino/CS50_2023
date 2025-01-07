@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h2>Portfolio</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.total_shares }}</td>
+                    <td>{{ stock.price | usd}}</td>
+                    <td>{{ stock.price * stock.total_shares }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" align="right">Cash</td>
+                <td>{{ cash | usd}}</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Total Value</td>
+                <td>{{ total_value | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Buy Stock</h3>
+    <form action="{{ url_for('buy') }}" method="post">
+        <label for="symbol">Symbol</label>
+        <input type="text" name="symbol" id="symbol" placeholder="Symbol" required>
+        <label for="shares">Shares</label>
+        <input type="number" name="shares" id="shares" placeholder="Shares" required>
+        <button type="submit">Buy</button>
+    </form>
+
+    <h3>Sell Stock</h3>
+    <form action="{{ url_for('sell') }}" method="post">
+        <label for="symbol_sell">Symbol</label>
+        <input type="text" name="symbol_sell" id="symbol_sell" placeholder="Symbol" required>
+        <label for="shares_sell">Shares</label>
+        <input type="number" name="shares_sell" id="shares_sell" placeholder="Shares" required>
+        <button type="submit">Sell</button>
+    </form>
+{% endblock %}

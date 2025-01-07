@@ -1,0 +1,11 @@
+Anthony Petrosino
+
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+
+The audio aura would likely represent the users prefered average energy, valence, and danceability levels.
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
+What better ways of calculating this aura would you propose?
+
+This might not mean much because it is only representative of their top 100 songs, which may not represent
+certain preferences. The data collected may also be outdated and the listener's tastes may have changed.
